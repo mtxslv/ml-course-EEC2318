@@ -32,11 +32,9 @@ Even though the funny part (the curriculum focus) of ML is modelling, data misha
 
 10. Originally created to increase the amount of training data, _data augmentation_ make models more robust to noise and adversarial attacks. The trick here rely on data format manipulation. For instance, we can randomly flip a image or replace synonyms in a sentence, preserving the label and effectively synthesizing more data points. Another way of doing so is training on noise-injected samples to improve decision-boundaries' weak points.
 
-
-
-
-
 # Conclusion
+
+The takeaway here is simple: look after your data with affection. Garbage in, garbage out, dig? Not just that, be mindful of how to sample, and how you are going to collect the labels. At last, do not worry... you can still get around with your current data by applying data augmentation and even data imbalance can be attenuated.
 
 ---
 _Suggestions_
