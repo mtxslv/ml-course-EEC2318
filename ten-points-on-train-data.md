@@ -10,8 +10,7 @@ Often overlooked in ML coursework, sampling happens across the ML lifecycle: we 
 
 We may sample without caring for probability criterias, only by convenience. It happens by using any data we got, or scraping a website, or by slicing data by categories. This includes selection biases, but sometimes is everything you have to start your project. To make your models reliable, you'll use a probability based sampling.
 
-
-
+The simplest form of random sampling is to consider everybody has the same chance: easy to implement, but prone to leave rare events out of your samples. To solve it, you can sample from groups inside your data, this way ensuring even rare clases appear (stratified sampling). Another way is to weight samples, and use it as a proxy to probability of being selected. Other ways exist, like Reservoir Sampling (for streaming data), but I'll skip it. 
 
 ## _On Labeling_
 
