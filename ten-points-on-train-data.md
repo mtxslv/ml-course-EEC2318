@@ -14,8 +14,9 @@ The simplest form of random sampling is to consider everybody has the same chanc
 
 ## _On Labeling_
 
-Current production models are supervised. It is not surprise we need good quality labeled data to train them on. The catch? As long as you want your ML systems to work you'll need a labeling team.
+Current production models are supervised. It is not surprise we need good quality labeled data to train them on. Then, as long as you want your ML systems to work you'll need a labeling team.
 
+The catch? Hand labeling needs subject matter expertise (expensive), it threatens data privacy (can your insurance see your medical records?), and it goes at snail's pace (have you ever tried to organize your smartphone's camera roll?). Moreover, labelling in general may be ambiguous (label multiplicity) and difficult to version (data lineage).
 
 
 ## _On Class Imbalance_
