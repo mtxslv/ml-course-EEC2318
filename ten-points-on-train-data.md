@@ -20,7 +20,7 @@ The catch? Hand labeling needs subject matter expertise (expensive), it threaten
 
 But don't fret: all not is lost. Sometimes, the task has natural ground truth labels (the predictions can be automatically full/partially evaluated by the system). For instance, recommender systems know the suggestion worked when the customer indeed buy the product. In other scenarios, we can collect user feedback (Google let users submit alternative translations).
 
-
+Ok, sometimes we're at rock bottom: no sufficient labeled data at all. Even in that situation we still have workarounds. We can extract labels by applying a set of simple heuristics (weak suppervision). Other possibility is to train a model on few lable samples and then on top predictions or on similar unlabelled data (semi-supervision). A last possibility is to reuse models in a similar, but different, task.
 
 ## _On Class Imbalance_
 
