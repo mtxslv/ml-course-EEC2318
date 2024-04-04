@@ -30,6 +30,12 @@ To solve this we change the following: the metric (less insensitive to imbalance
 
 # _On Data Augmentation_
 
+Originally created to increase the amount of training data, _data augmentation_ make models more robust to noise and adversarial attacks. The trick here rely on data format manipulation. For instance, we can randomly flip a image or replace synonyms in a sentence, preserving the label and effectively synthesizing more data points. Another way of doing so is training on noise-injected samples to improve decision-boundaries' weak points.
+
+
+
+
+
 # Conclusion
 
 ---
