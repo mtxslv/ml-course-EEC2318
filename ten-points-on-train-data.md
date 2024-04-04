@@ -24,6 +24,11 @@ Ok, sometimes we're at rock bottom: no sufficient labeled data at all. Even in t
 
 ## _On Class Imbalance_
 
+Sometimes, in classification tasks, each class has a different amount of samples (i.e., detection of medical conditions). This messes up our model for a number of reasons, but to summarize notice that our model may just output the majority class and even so their accuracy will be good. And worse: probably the minority class has a high cost!
+
+To solve this we change the following: the metric (less insensitive to imbalance), the data distribution itself (less imbalanced), or the learning model (more robust).
+
+# _On Data Augmentation_
 
 # Conclusion
 
