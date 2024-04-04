@@ -18,6 +18,9 @@ Current production models are supervised. It is not surprise we need good qualit
 
 The catch? Hand labeling needs subject matter expertise (expensive), it threatens data privacy (can your insurance see your medical records?), and it goes at snail's pace (have you ever tried to organize your smartphone's camera roll?). Moreover, labelling in general may be ambiguous (label multiplicity) and difficult to version (data lineage).
 
+But don't fret: all not is lost. Sometimes, the task has natural ground truth labels (the predictions can be automatically full/partially evaluated by the system). For instance, recommender systems know the suggestion worked when the customer indeed buy the product. In other scenarios, we can collect user feedback (Google let users submit alternative translations).
+
+
 
 ## _On Class Imbalance_
 
