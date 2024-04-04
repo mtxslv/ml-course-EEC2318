@@ -14,6 +14,10 @@ The simplest form of random sampling is to consider everybody has the same chanc
 
 ## _On Labeling_
 
+Current production models are supervised. It is not surprise we need good quality labeled data to train them on. The catch? As long as you want your ML systems to work you'll need a labeling team.
+
+
+
 ## _On Class Imbalance_
 
 
