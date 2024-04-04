@@ -35,11 +35,3 @@ Even though the funny part (the curriculum focus) of ML is modelling, data misha
 # Conclusion
 
 The takeaway here is simple: look after your data with affection. Garbage in, garbage out, dig? Not just that, be mindful of how to sample, and how you are going to collect the labels. At last, do not worry... you can still get around with your current data by applying data augmentation and even data imbalance can be attenuated.
-
----
-_Suggestions_
-- sampling
-- label multiplicity,
-- lack of labels
-- class implanace
-- data augmentation
