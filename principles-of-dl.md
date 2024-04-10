@@ -2,9 +2,31 @@
 
 Current AI systems contain billions of elementary components, or computational blocks, loosely based on biological neurons. These are organized into sequential computational layers (called deep neural nets, or DNN) that, after some initialization and training, _learn_ a refined representation capable of transforming data into something useful for a given task.
 
+How does it work? Here goes a high level overview...
 
+First of all, a **neural net** (NN) computes a function built out of many many simpler others (neurons). Each simpler ones are weighted sums of incoming signals that fires when the sums crosses some threshold. The parameters of the big function (NN) are the weights on the connections and the thresholds. 
 
+> Modern DNN have billions of parameters 
 
+In other words, we consider a NN a parametrized function of the form:
+
+$f(x;\theta)$
+
+with $x$ being the inputs and $\theta$ a vector containing the aforementioned parameters.
+
+The first step is to initialize the net by sampling $\theta$ from a probability distribution $p(\theta)$.
+
+We then adjust the parameter vector in order to make the network function as close as possible to the desired target function. That is:
+
+$\theta \rightarrow \theta\ast \implies f(x;\theta\ast) \approx f(x)$ 
+
+This function approximation (a.k.a. training) happens by **fitting $f(x;\theta)$ to training data**. Such data consists of pairs of the form
+
+$(x,f(x))$
+
+observed from the desired – but only partially observable target function $f(x)$.
+
+Moreover, the method used to tune $\theta$ is called **learning algorithm**.
 
 # Implications
 
