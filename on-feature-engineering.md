@@ -8,7 +8,8 @@ Even though we have deep learning (or feature learning) capable of learning repr
 
 Given the ubiquity of feature engineering in ML, many techniques have been developed. Let's disscuss some...
 
-## Missing Values
+## Techniques
+### Missing Values
 
 When dealing with real-world data, you'll certainly encouter data whose values are missing. It can happen because of several reasons:
 - _Missing not at random_: the data is missing because of its true value, like when survey respondents do not disclose income. Too high to say aloud, dig?
@@ -23,7 +24,7 @@ Another thing to do is to fill missing values with some number. Which number? Th
 
 At last, just keep in mind there is no fool proof way of handing missing data. They are annoying and all ways of fixing it will have their weaknesses.
 
-## Scaling
+### Scaling
 
 ML models don't understand features have different interpretations. If a feature have a number around thousands and another one is just dozens, it will give more importance to the former without a second thought.
 
@@ -33,13 +34,23 @@ A similar, but different, struggle are skewed distributions (long tail on the si
 
 Pay attention to data drift between training-test environments. Since scaling needs global statistic, if they changes significantly, they won't be useful anymore.
 
-## Discretization
+### Discretization
 
 Discretization (a.k.a. quantization or binning) turns a continuous feature into a discrete one by creating buckets and putting samples in it. This way, instead of havint to learn an infinite range (or large amount of categorical possibilities), it will instead focus on learning only a handful of categories.
 
-## Encoding Categorical Features
+### Encoding Categorical Features
 
 Ok, we kinda know we can turn continuous features into categorical features. But how we handle categorical features? It is important to know categories evolve over time, making 'put everybody in buckets' an actually hard task. One solution is to hash categories, generating an index in a space whose size can be controlled. This can cause collision (two categories randomly ending in the same index) though, but you can attenuate it by using a customized hash function or a space large enough to reduce collision.
+
+### Feature Crossing
+
+It stands for combining two or more features to generate new ones and is cool because it models nonlinear relationships between them. There is a caveat worth knowing: it makes the feature space blow up.
+
+### Positional Embeddings
+
+Current positional embeddings in models like BERT are vectors accounting for a word (actually a token) position in a sentence. They are learned during trained and have the same size of the word (token) embedding in order to make sum available.
+
+## Data Leakage
 
 # Best Practices Summary
 
@@ -47,3 +58,5 @@ Ok, we kinda know we can turn continuous features into categorical features. But
 - Before feeding data to models, scale them to similar ranges. If data is skewed, you can log-transform them. And at last, keep checking for statistics in prod to be sure they do not differ too much from training data's.
 - Discretization may not help that much. But it may be important to know it exists.
 - Categories change over time. To account for varying categories, consider using customized hashing functions.
+- Crossing features models nonlinear relationships in the expense of blowing the feature space up.
+- Positional embedding uses vactors instead of numbers because the neural net work better with the former.
