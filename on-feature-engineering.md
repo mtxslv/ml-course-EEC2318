@@ -39,11 +39,11 @@ Discretization (a.k.a. quantization or binning) turns a continuous feature into 
 
 ## Encoding Categorical Features
 
-...
+Ok, we kinda know we can turn continuous features into categorical features. But how we handle categorical features? It is important to know categories evolve over time, making 'put everybody in buckets' an actually hard task. One solution is to hash categories, generating an index in a space whose size can be controlled. This can cause collision (two categories randomly ending in the same index) though, but you can attenuate it by using a customized hash function or a space large enough to reduce collision.
 
 # Best Practices Summary
 
 - For missing data: at first try to input them (median, mean, or mode). If too many rows are missing in a col, you might drop the feature. Check how this decision affects the model's metrics and keep in mind possibility of bias, noise or leakage.
 - Before feeding data to models, scale them to similar ranges. If data is skewed, you can log-transform them. And at last, keep checking for statistics in prod to be sure they do not differ too much from training data's.
 - Discretization may not help that much. But it may be important to know it exists.
-- Categories change over time
+- Categories change over time. To account for varying categories, consider using customized hashing functions.
