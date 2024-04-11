@@ -1,6 +1,6 @@
 # Intro
 
-Believe it or not, but having the right features given a bigger performance boost than clever algorithmic techniques (SotA models with bad set of features sucks, basically). It is not surprise, then, that ML engineering/data science tasks revolve around coming up with useful features. Actually, there is a proper name for it: feature engineering.
+Believe it or not, but having the right features gives a bigger performance boost than clever algorithmic techniques (SotA models with bad set of features sucks anyway). It is not surprise, then, that ML engineering/data science tasks revolve around coming up with useful features. Actually, there is a proper name for it: feature engineering.
 
 Even though we have deep learning (or feature learning) capable of learning representation automatically, it is not like all features can be automated. Moreover, current production ML applications aren't DL at all: sometimes we need subject matter expertise to craft features for our systems to be useful.
 
@@ -33,7 +33,12 @@ A similar, but different, struggle are skewed distributions (long tail on the si
 
 Pay attention to data drift between training-test environments. Since scaling needs global statistic, if they changes significantly, they won't be useful anymore.
 
+## Discretization
+
+Discretization (a.k.a. quantization or binning) turns a continuous feature into a discrete one by creating buckets and putting samples in it. This way, instead of havint to learn an infinite range (or large amount of categorical possibilities), it will instead focus on learning only a handful of categories.
+
 # Best Practices Summary
 
 - For missing data: at first try to input them (median, mean, or mode). If too many rows are missing in a col, you might drop the feature. Check how this decision affects the model's metrics and keep in mind possibility of bias, noise or leakage.
 - Before feeding data to models, scale them to similar ranges. If data is skewed, you can log-transform them. And at last, keep checking for statistics in prod to be sure they do not differ too much from training data's.
+- Discretization may not help that much. But it may be important to know it exists.
