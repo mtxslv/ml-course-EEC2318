@@ -52,6 +52,21 @@ Current positional embeddings in models like BERT are vectors accounting for a w
 
 ## Data Leakage
 
+_Data leakage_ refers to the phenomenom when a form of label 'leaks' into the features used for predictions during training. Detecting it is challenging because often the leakage is not obvious and dangerous because it can cause the model to fail terribly (even after careful evaluation and testing).  
+
+Some common causes for it are:
+- randomly splitting time-correlated data instead of doing it by time: sometimes time itself carry information, and by letting future samples go back to training data, we might be giving the model a unwanted help;
+- scaling before splitting: scaling involves global statistics. If they are calculated before splitting, the model certainly sees hints of the test set;
+- filling missing data with test-split statistics: kinda the same... we calculate stats for filling using the test set
+- poor handling of duplicates: duplicates or near-duplicates can appear on both train and test sets;
+- group leakage: samples more correlated with the labels end up in both splits.
+- data generation: the way data is generates imprints information regarding the label in a obscure way.
+
+Ok, but how to detect it? First, measure predictive power for each feature. If one of them is unusually highly correlated, check if it makes sense. Second, ablation studies: if removing a feature hurts the model so bad or adding a new one makes it super, why is it so important?
+
+Talking about adding features, go easy on doing so.. it might leak data, or overfit the model, for instance. Regularize training to ensure only useful features are priorized. 
+
+
 # Best Practices Summary
 
 - For missing data: at first try to input them (median, mean, or mode). If too many rows are missing in a col, you might drop the feature. Check how this decision affects the model's metrics and keep in mind possibility of bias, noise or leakage.
@@ -60,3 +75,6 @@ Current positional embeddings in models like BERT are vectors accounting for a w
 - Categories change over time. To account for varying categories, consider using customized hashing functions.
 - Crossing features models nonlinear relationships in the expense of blowing the feature space up.
 - Positional embedding uses vactors instead of numbers because the neural net work better with the former.
+- Data Leakage may happen to anyone. Even so, it is rarely covered in ML curricula. Be wary of that!
+- In order to know the importance of features, take a look in model-agnostic methods, like SHAP
+- At last, good features should generalize (not necessarily equally) to unseen data. So, if a feature misses too much, it'll hardly be generalizable.
