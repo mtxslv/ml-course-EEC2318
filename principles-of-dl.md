@@ -30,6 +30,10 @@ Moreover, the method used to tune $\theta$ is called **learning algorithm**.
 
 # Implications
 
+The definitions introduced above can be understood in the following terms:
+- Neural Nets are function approximators;
+- NN training is the same as function fitting (as we see in Numerical Analysis 101);
+- The results depend on the parameters learned. 
 
 # My Ideas
 
