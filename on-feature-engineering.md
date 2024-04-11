@@ -37,8 +37,13 @@ Pay attention to data drift between training-test environments. Since scaling ne
 
 Discretization (a.k.a. quantization or binning) turns a continuous feature into a discrete one by creating buckets and putting samples in it. This way, instead of havint to learn an infinite range (or large amount of categorical possibilities), it will instead focus on learning only a handful of categories.
 
+## Encoding Categorical Features
+
+...
+
 # Best Practices Summary
 
 - For missing data: at first try to input them (median, mean, or mode). If too many rows are missing in a col, you might drop the feature. Check how this decision affects the model's metrics and keep in mind possibility of bias, noise or leakage.
 - Before feeding data to models, scale them to similar ranges. If data is skewed, you can log-transform them. And at last, keep checking for statistics in prod to be sure they do not differ too much from training data's.
 - Discretization may not help that much. But it may be important to know it exists.
+- Categories change over time
