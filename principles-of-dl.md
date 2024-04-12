@@ -45,7 +45,9 @@ The definitions introduced above can be understood in the following terms:
 
 # My Personal Take 
 
-- There is something that bothers me a lot regarding AI. It feels like 'mathematics applied'. That's y I decided to learn it in the first place. Instead, when I see people '''using''' it on practice, they just run some tutorial on a subset of benchmark data and that's it. Like... wth? Where is the learning? Where is the science of the data? It is frustating because it has no art, no technique. It is even more dump than just writing a script to do the very same task. When reading the chapter's beginning I can only feel hopeless... so at the end there is no learning? Damn bro...
+First of all... the definitions here are fundamental to understand NN. Similar definitions can be seen in [Mitchell, 1997](http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.html) and [Goodfellow et al, 2016](https://www.deeplearningbook.org/). By seeing them as universal approximators and providing definitions regarding their behaviour and mechanisms we can them not as magical tools, but as clever solutions. More specifically, the definition of learning as an iterative optimization process helps to link the 'training' techniques to more intelligible mathematical processes, like interpolation and regression.
+
+Regarding the desire to understand the global behaviour, the analogy of applied physics looks adequate. I'd rather say, though, that I do not know if the comprehension of neural nets in a universal, theoretical framework is possible, or if the empirical nature of Deep Learning and Big Data makes such a endeavour too complex.
 
 ---
 
