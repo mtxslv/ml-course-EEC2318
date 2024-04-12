@@ -28,14 +28,22 @@ observed from the desired – but only partially observable target function $f(x
 
 Moreover, the method used to tune $\theta$ is called **learning algorithm**.
 
-# Implications
+Our goal is to understand how the macroscopical behaviour emerges from the microscopic definitions. Moreover, we want to catch a glimpse of how the function approximation works and how data is consumed to make it happen.
+
+To do that we could expand $f(x;\theta\star)$ around the initial values of $\theta$. But this has its own issues, like: $\theta$ is sampled and the training dynamics is non linear. This makes any possibility of following up the training impossible. 
+
+To bypass it, let's suppose an infinite-width net. For reasons outside the scope of this short text, it causes the taylor expansion to be limited to the first derivative, the sampling in function of the derivatives independent, and the dynamics linear. This is cool, but mismatch the empirical findings about multi-layered NN.
+
+To correct it, we use **perturbation theory** and define the inverse of layer width $\epsilon$. Again, I'm not going to go into the details here. It is important to know that, by defining this way, we solve the issues mentioned and keep things tractable and realistic. This is a promising way of discovering general rules and of understanding the overall behaviour of NN.
+
+# Implications 
 
 The definitions introduced above can be understood in the following terms:
 - Neural Nets are function approximators;
 - NN training is the same as function fitting (as we see in Numerical Analysis 101);
-- The results depend on the parameters learned. 
+- The final network behaviour depends on the parameters learned. 
 
-# My Ideas
+# My Personal Take 
 
 - There is something that bothers me a lot regarding AI. It feels like 'mathematics applied'. That's y I decided to learn it in the first place. Instead, when I see people '''using''' it on practice, they just run some tutorial on a subset of benchmark data and that's it. Like... wth? Where is the learning? Where is the science of the data? It is frustating because it has no art, no technique. It is even more dump than just writing a script to do the very same task. When reading the chapter's beginning I can only feel hopeless... so at the end there is no learning? Damn bro...
 
